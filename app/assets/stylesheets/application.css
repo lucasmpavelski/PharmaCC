@@ -3,6 +3,7 @@
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require_self
+ *= require demo_table
 */
 
 /*
@@ -41,7 +42,7 @@ ol li {margin: 5px 0; display: list-item;}
 /* basic form elements */
 fieldset {border: none;}
 legend {border: none; font-weight: bold;}
-label {display: block; float: left; clear: left; width: 150px; margin: 5px 0;}
+label {display: block; clear: left; margin: 5px 0;}
 input, textarea, select {margin: 5px 0; padding: 5px 10px; border: 1px solid #ccc; background: #fff url("input.png") top repeat-x; color: #999; vertical-align: middle;}
 	input.chk, input.radio {width: auto; border: none;}
 textarea {width: 550px; height: 150px;}
@@ -511,4 +512,12 @@ a, a:visited {
 }
 .buttons a img{
   vertical-align: middle;
+}
+
+table {
+    white-space: normal; line-height: normal; font-weight: normal; font-size: medium; font-variant: normal; font-style: normal; color: -webkit-text; text-align: -webkit-auto;
+}
+
+#providers_mng {
+	width: 80%;
 }

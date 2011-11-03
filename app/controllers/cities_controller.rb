@@ -80,4 +80,9 @@ class CitiesController < ApplicationController
       format.json { head :ok }
     end
   end
+
+  def select_json
+    @cities = City.where(:state_id => params[:state_id]).order(:name) unless params[:state_id].blank?
+    render :json => @cities.map(&:attributes)
+  end
 end

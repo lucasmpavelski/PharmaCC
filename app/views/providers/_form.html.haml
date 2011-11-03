@@ -1,35 +1,80 @@
-= form_for(@provider) do |f|
-- if @provider.errors.any?
-#error_explanation
-  %h2
-    = pluralize(@provider.errors.count, "error")
-    prohibited this provider from being saved:
-  %ul
-    - @provider.errors.full_messages.each do |msg|
-    %li
-      = msg
-    - end
-- end
-.field
-  = f.label :name
-  %br
-  = f.text_field :name
-.field
-  = f.label :cnpj
-  %br
-  = f.text_field :cnpj
-.field
-  = f.label :address
-  %br
-  = f.text_field :address
-.field
-  = f.label :city
-  %br
-  = f.text_field :city
-.field
-  = f.label :phone
-  %br
-  = f.text_field :phone
-.actions
-  = f.submit
-- end
+-#= form_for(@provider) do |f|
+-#- if @provider.errors.any?
+-##error_explanation
+  -#%h2
+    -#= pluralize(@provider.errors.count, "error")
+    -#prohibited this provider from being saved:
+  -#%ul
+    -#- @provider.errors.full_messages.each do |msg|
+    -#%li
+      -#= msg
+-#.field
+  -#= f.label :name
+  -#%br
+  -#= f.text_field :name
+-#.field
+  -#= f.label :cnpj
+  -#%br
+  -#= f.text_field :cnpj
+-#.field
+  -#= f.label :address
+  -#%br
+  -#= f.text_field :address
+-#.field
+  -#= f.label :city
+  -#%br
+  -#= f.text_field :city
+-#.field
+  -#= f.label :phone
+  -#%br
+  -#= f.text_field :phone
+-#.actions
+  -#= f.submit
+- debug @provider
+= semantic_form_for @provider do |f|
+  = f.inputs do
+    %table{ :style => "width: 100%" }
+      %tr
+        %th{ :align => "center" }
+          Cadastrar novo fornecedor
+    %pre
+      %table
+        %tbody
+          %tr
+            %td
+              Nome
+            %td
+              = f.input :name, :input_html => { :size => "40" }, :label => false
+          %tr
+            %td
+              CNPJ
+            %td
+              = f.input :cnpj, :input_html => { :size => "40" }, :label => false
+          %tr
+            %td
+              Estado
+            %td
+              = select_tag :state, options_from_collection_for_select(State.all, "id", "name"), :class => 'update_cities_select'
+          %tr
+            %td
+              Cidade
+            %td
+              = select_tag :provider_city_id_input, [["Selecione um estado"]], :name => "provider[city_id]", :input_html => { :size => "40" }, :prompt => "Selecione um estado"
+          %tr
+            %td
+              Endereço
+            %td
+              = f.input :address, :input_html => { :size => "40" }, :label => false
+          %tr
+            %td
+              Telefone
+            %td
+              = f.input :phone, :input_html => { :size => "40" }, :label => false
+
+
+  %p{ :align => "center" }
+    %input{ :name => "CADASTRAR", :type => "submit", :value => "Cadastrar" }
+    \&nbsp;&nbsp;&nbsp;
+    %input{ :type => "reset", :value => "Limpar" }
+    \&nbsp;&nbsp;&nbsp;
+    %input{ :type => "button", :value => "Menu principal", :onclick => "location.href='gerenciarFornecedor.html'" }

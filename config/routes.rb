@@ -8,7 +8,8 @@ PharmaCC::Application.routes.draw do
   resources :states
 
   root :to => 'static_pages#home'
-
+  
+  match 'cities_json/:state_id', :controller =>'cities', :action => 'select_json'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

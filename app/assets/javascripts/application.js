@@ -6,3 +6,30 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.dataTables.min
+
+function makeOptions (data, first)
+{
+  var output = [];
+  output.push('<option value>' + first + '</option>');
+  $.each(data, function(key, value)
+    {
+      output.push('<option value="'+ value.id +'">'+ value.name +'</option>');
+    });
+  return output.join('');
+}
+jQuery(function () {
+
+    $("select.update_cities_select").each( function () {
+      this.onchange = function () {
+      var state = $(this).find("option:selected").val();
+      if (state == "") state = "0";
+      jQuery.getJSON('/cities_json/' + state, function(data){
+        $('#provider_city_id_input').html(makeOptions(data, "Cidades"));
+        });
+      };
+      });
+
+    $("#providers").dataTable();
+
+    });

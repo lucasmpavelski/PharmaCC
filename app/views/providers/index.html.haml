@@ -1,38 +1,81 @@
-%h1
-  Listing providers
-%table
-  %tr
-    %th
-      Name
-    %th
-      Cnpj
-    %th
-      Address
-    %th
-      City
-    %th
-      Phone
-    %th
-    %th
-    %th
-  - @providers.each do |provider|
-  %tr
-    %td
-      = provider.name
-    %td
-      = provider.cnpj
-    %td
-      = provider.address
-    %td
-      = provider.city
-    %td
-      = provider.phone
-    %td
-      = link_to 'Show', provider
-    %td
-      = link_to 'Edit', edit_provider_path(provider)
-    %td
-      = link_to 'Destroy', provider, :confirm => 'Are you sure?', :method => :delete
-  - end
-%br
-= link_to 'New Provider', new_provider_path
+-#%h1
+  -#Listing providers
+-#%table{ :style => "width: 100%;" }
+  -#%tr
+    -#%th
+      -#Name
+    -#%th
+      -#Cnpj
+    -#%th
+      -#Address
+    -#%th
+      -#City
+    -#%th
+      -#Phone
+    -#%th
+    -#%th
+    -#%th
+  -#- @providers.each do |provider|
+    -#%tr
+      -#%td
+        -#= provider.name
+      -#%td
+        -#= provider.cnpj
+      -#%td
+        -#= provider.address
+      -#%td
+        -#= provider.city
+      -#%td
+        -#= provider.phone
+      -#%td
+        -#= link_to 'Show', provider
+      -#%td
+        -#= link_to 'Edit', edit_provider_path(provider)
+      -#%td
+        -#= link_to 'Destroy', provider, :confirm => 'Are you sure?', :method => :delete
+-#%br
+-#= link_to 'New Provider', new_provider_path
+
+%table{ :style => "width: 100%;" }
+  %th{ :align => "center" }
+    Gerência de Fornecedor
+
+#providers_mng
+  %table#providers
+    %thead
+      %tr
+        %td
+          %center
+            CNPJ
+        %td
+          %center
+            Nome
+        %td
+          %center
+            Cidade
+        %td
+          %center
+            Estado
+        %td
+          %center
+            Ações
+    %tbody
+      - @providers.each do |provider|
+        %tr
+          %td
+            = provider.cnpj
+          %td
+            = provider.name
+          %td
+            = provider.city.name
+          %td
+            = provider.city.state.name
+          %td
+            = link_to (image_tag "edit.png", :alt => "editar cadastro"), edit_provider_path(provider)
+            \&nbsp;&nbsp;&nbsp;
+            = link_to (image_tag "remove.png", :alt => "editar cadastro"), provider, :confirm => 'Are you sure?', :method => :delete
+
+%p{ :align => "center" }
+%input{ :type => "button", :value => "Cadastrar novo", :onclick => "location.href='" + new_provider_path + "'" }
+\&nbsp;&nbsp;&nbsp;
+%input{ :type => "button", :value => "Menu principal", :onclick => "location.href='" + root_path + "'" }

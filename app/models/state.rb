@@ -1,5 +1,5 @@
 class State < ActiveRecord::Base
-  attr_accessible :city_id, :name
+  attr_accessible :city_id, :name, :id
 
-  has_many :cities, :providers
+  has_many :cities
 end

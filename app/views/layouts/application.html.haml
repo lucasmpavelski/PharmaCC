@@ -7,62 +7,9 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    -#= yield
-    .header
-      %p.logo
-        %a{ :href => "#" }
-          = image_tag "logo.png", :alt => "PharmaCC"
-          PharmaCC
-        Sistema de gerenciamento de farmácias
-      .header-menu
-        %ul.menu
-          %li.page_item
-            %a{ :href => "principal.html" }
-              %span
-                %span
-                  Início
-          %li.page_item
-            %a{ :href => "#" }
-              %span
-                %span
-                  Gerenciar
-            %ul
-              %li
-                %a{ :href => "gerenciarUsuario.html" }
-                  Usuário
-              %li
-                %a{ :href => "gerenciarProdutos.html" }
-                  Produto
-              %li
-                %a{ :href => "gerenciarFornecedor.html" }
-                  Fornecedor
-          %li.page_item
-            %a{ :href => "#" }
-              %span
-                %span
-                  Listar
-            %ul
-              %li
-                %a{ :href => "#" }
-                  Relatórios Produtos
-              %li
-                %a{ :href => "#" }
-                  Relatórios Fornecedores
-              %li
-                %a{ :href => "#" }
-                  Relatórios Usuários
-          %li.page_item
-            %a{ :href => "#" }
-              %span
-                %span
-                  Ajuda
-          %li.page_item
-            %a{ :href => "#" }
-              %span
-                %span
-                  Sair
+    = render 'layouts/header'
     .content
-      .main
+      .main{ :align => "center" }
         = yield
     .footer
       %p
