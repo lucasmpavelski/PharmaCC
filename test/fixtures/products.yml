@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  code: 1
+  provider: 
+  price: 9.99
+  amount: 1
+  laboratory: MyString
+
+two:
+  name: MyString
+  code: 1
+  provider: 
+  price: 9.99
+  amount: 1
+  laboratory: MyString

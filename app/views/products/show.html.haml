@@ -1,0 +1,29 @@
+%p#notice
+  = notice
+%p
+  %b
+    Name:
+  = @product.name
+%p
+  %b
+    Code:
+  = @product.code
+%p
+  %b
+    Provider:
+  = @product.provider
+%p
+  %b
+    Price:
+  = @product.price
+%p
+  %b
+    Amount:
+  = @product.amount
+%p
+  %b
+    Laboratory:
+  = @product.laboratory
+= link_to 'Edit', edit_product_path(@product)
+|
+= link_to 'Back', products_path

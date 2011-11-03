@@ -1,0 +1,25 @@
+%div{ :style => "width: 100%; text-align: center; margin-top: 100px;" }
+  = image_tag "logo.png", :alt => "PharmaCC"
+  %font{ :size => "20", :style => "font: normal 3.75em PTSansBold,sans-serif; " }
+    PharmaCC
+  %br
+  %font{ :size => "5" }
+    Bem-vindo ao nosso sistema!
+    %br
+    Escolha a sua opção
+.buttons
+  %a.button{ :href => "gerenciarUsuario.html" }
+    = image_tag "usuarios.png", :alt => "USUÁRIOS"
+    USUÁRIOS
+  \&nbsp;&nbsp;&nbsp;
+  %a.button{ :href => "gerenciarProdutos.html" }
+    = image_tag "produtos.png", :alt => "PRODUTOS"
+    PRODUTOS
+  \&nbsp;&nbsp;&nbsp;
+  %a.button{ :href => "gerenciarFornecedor.html" }
+    = image_tag "fornecedores.png", :alt => "FORNECEDORES"
+    FORNECEDORES
+  \&nbsp;&nbsp;&nbsp;
+  %a.button{ :href => "#" }
+    = image_tag "vendas.png", :alt => "VENDAS"
+    VENDAS

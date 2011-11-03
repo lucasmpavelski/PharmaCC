@@ -1,0 +1,42 @@
+%h1
+  Listing products
+%table
+  %tr
+    %th
+      Name
+    %th
+      Code
+    %th
+      Provider
+    %th
+      Price
+    %th
+      Amount
+    %th
+      Laboratory
+    %th
+    %th
+    %th
+  - @products.each do |product|
+  %tr
+    %td
+      = product.name
+    %td
+      = product.code
+    %td
+      = product.provider
+    %td
+      = product.price
+    %td
+      = product.amount
+    %td
+      = product.laboratory
+    %td
+      = link_to 'Show', product
+    %td
+      = link_to 'Edit', edit_product_path(product)
+    %td
+      = link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete
+  - end
+%br
+= link_to 'New Product', new_product_path
