@@ -8,18 +8,18 @@
     %br
     Escolha a sua opção
 .buttons
-  %a.button{ :href => "gerenciarUsuario.html" }
+  = link_to '#', :class => 'button' do
     = image_tag "usuarios.png", :alt => "USUÁRIOS"
     USUÁRIOS
   \&nbsp;&nbsp;&nbsp;
-  %a.button{ :href => "gerenciarProdutos.html" }
+  = link_to products_path, :class => 'button' do
     = image_tag "produtos.png", :alt => "PRODUTOS"
     PRODUTOS
   \&nbsp;&nbsp;&nbsp;
-  %a.button{ :href => "gerenciarFornecedor.html" }
+  = link_to providers_path, :class => 'button' do
     = image_tag "fornecedores.png", :alt => "FORNECEDORES"
     FORNECEDORES
   \&nbsp;&nbsp;&nbsp;
-  %a.button{ :href => "#" }
+  = link_to '#', :class => 'button' do
     = image_tag "vendas.png", :alt => "VENDAS"
     VENDAS

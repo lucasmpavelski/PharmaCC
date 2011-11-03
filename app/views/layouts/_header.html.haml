@@ -7,7 +7,7 @@
   .header-menu
     %ul.menu
       %li.page_item
-        %a{ :href => "principal.html" }
+        = link_to root_path do
           %span
             %span
               Início
@@ -18,14 +18,11 @@
               Gerenciar
         %ul
           %li
-            %a{ :href => "gerenciarUsuario.html" }
-              Usuário
+            = link_to 'Usuários', '#'
           %li
-            %a{ :href => "gerenciarProdutos.html" }
-              Produto
+            = link_to 'Produtos', products_path
           %li
-            %a{ :href => "gerenciarFornecedor.html" }
-              Fornecedor
+            = link_to 'Fornecedores', providers_path
       %li.page_item
         %a{ :href => "#" }
           %span
@@ -42,7 +39,7 @@
             %a{ :href => "#" }
               Relatórios Usuários
       %li.page_item
-        %a{ :href => "#" }
+        = link_to static_pages_help_path do 
           %span
             %span
               Ajuda

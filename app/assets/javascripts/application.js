@@ -31,5 +31,6 @@ jQuery(function () {
       });
 
     $("#providers").dataTable();
+    $("#products").dataTable();
 
     });

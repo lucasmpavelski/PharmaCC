@@ -518,6 +518,6 @@ table {
     white-space: normal; line-height: normal; font-weight: normal; font-size: medium; font-variant: normal; font-style: normal; color: -webkit-text; text-align: -webkit-auto;
 }
 
-#providers_mng {
+.has_a_datatable {
 	width: 80%;
 }

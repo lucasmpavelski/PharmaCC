@@ -40,7 +40,7 @@
   %th{ :align => "center" }
     Gerência de Fornecedor
 
-#providers_mng
+#providers_mng.has_a_datatable
   %table#providers
     %thead
       %tr
@@ -72,10 +72,6 @@
             = provider.city.state.name
           %td
             = link_to (image_tag "edit.png", :alt => "editar cadastro"), edit_provider_path(provider)
-            \&nbsp;&nbsp;&nbsp;
             = link_to (image_tag "remove.png", :alt => "editar cadastro"), provider, :confirm => 'Are you sure?', :method => :delete
 
-%p{ :align => "center" }
-%input{ :type => "button", :value => "Cadastrar novo", :onclick => "location.href='" + new_provider_path + "'" }
-\&nbsp;&nbsp;&nbsp;
-%input{ :type => "button", :value => "Menu principal", :onclick => "location.href='" + root_path + "'" }
+= render :partial => 'layouts/mng_buttons', :locals => { :new_path => new_provider_path }

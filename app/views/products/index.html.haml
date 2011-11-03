@@ -1,42 +1,49 @@
-%h1
-  Listing products
-%table
-  %tr
-    %th
-      Name
-    %th
-      Code
-    %th
-      Provider
-    %th
-      Price
-    %th
-      Amount
-    %th
-      Laboratory
-    %th
-    %th
-    %th
-  - @products.each do |product|
-  %tr
-    %td
-      = product.name
-    %td
-      = product.code
-    %td
-      = product.provider
-    %td
-      = product.price
-    %td
-      = product.amount
-    %td
-      = product.laboratory
-    %td
-      = link_to 'Show', product
-    %td
-      = link_to 'Edit', edit_product_path(product)
-    %td
-      = link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete
-  - end
-%br
-= link_to 'New Product', new_product_path
+%table{ :style => "width: 100%;" }
+  %th{ :align => "center" }
+    Gerência de Produto
+
+#products_mng.has_a_datatable
+  %table#products
+    %thead
+      %tr
+        %td
+          %center
+            Nome
+        %td
+          %center
+            Código
+        %td
+          %center
+            Fornecedor
+        %td
+          %center
+            Preço
+        %td
+          %center
+            Quantidade
+        %td
+          %center
+            Laboratório
+        %td
+          %center
+            Ações
+    %tbody
+      - @products.each do |product|
+        %tr
+          %td
+            = product.name
+          %td
+            = product.code
+          %td
+            = product.provider.name
+          %td
+            = product.price
+          %td
+            = product.amount
+          %td
+            = product.laboratory
+          %td
+            = link_to (image_tag "edit.png", :alt => "editar cadastro"), edit_product_path(product)
+            = link_to (image_tag "remove.png", :alt => "editar cadastro"), product, :confirm => 'Are you sure?', :method => :delete
+
+= render :partial => 'layouts/mng_buttons', :locals => { :new_path => new_product_path }

@@ -33,10 +33,7 @@
 - debug @provider
 = semantic_form_for @provider do |f|
   = f.inputs do
-    %table{ :style => "width: 100%" }
-      %tr
-        %th{ :align => "center" }
-          Cadastrar novo fornecedor
+
     %pre
       %table
         %tbody
@@ -71,10 +68,6 @@
             %td
               = f.input :phone, :input_html => { :size => "40" }, :label => false
 
-
-  %p{ :align => "center" }
-    %input{ :name => "CADASTRAR", :type => "submit", :value => "Cadastrar" }
-    \&nbsp;&nbsp;&nbsp;
-    %input{ :type => "reset", :value => "Limpar" }
-    \&nbsp;&nbsp;&nbsp;
-    %input{ :type => "button", :value => "Menu principal", :onclick => "location.href='gerenciarFornecedor.html'" }
+  = render :partial => 'layouts/form_buttons', :locals => { :what => @provider.new_record? ? 'Cadastrar' : 'Atualizar',
+    :who => 'fornecedores',
+    :where => providers_path }

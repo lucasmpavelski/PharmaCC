@@ -1,39 +1,39 @@
-= form_for(@product) do |f|
-- if @product.errors.any?
-#error_explanation
-  %h2
-    = pluralize(@product.errors.count, "error")
-    prohibited this product from being saved:
-  %ul
-    - @product.errors.full_messages.each do |msg|
-    %li
-      = msg
-    - end
-- end
-.field
-  = f.label :name
-  %br
-  = f.text_field :name
-.field
-  = f.label :code
-  %br
-  = f.number_field :code
-.field
-  = f.label :provider
-  %br
-  = f.text_field :provider
-.field
-  = f.label :price
-  %br
-  = f.text_field :price
-.field
-  = f.label :amount
-  %br
-  = f.number_field :amount
-.field
-  = f.label :laboratory
-  %br
-  = f.text_field :laboratory
-.actions
-  = f.submit
-- end
+= semantic_form_for @product do |f|
+  = f.inputs do
+    %pre
+      %table
+        %tbody
+          %tr
+            %td
+              Nome
+            %td
+              = f.input :name, :input_html => { :size => "40" }, :label => false
+          %tr
+            %td
+              Código
+            %td
+              = f.input :code, :input_html => { :size => "40" }, :label => false
+          %tr
+            %td
+              Fornecedor
+            %td
+              = f.input :provider, :as => :select, :label => false
+          %tr
+            %td
+              Preço
+            %td
+              = f.input :price, :input_html => { :size => "40" }, :label => false
+          %tr
+            %td
+              Quantidade
+            %td
+              = f.input :amount, :input_html => { :size => "40" }, :label => false
+          %tr
+            %td
+              Laboratório
+            %td
+              = f.input :laboratory, :input_html => { :size => "40" }, :label => false
+
+  = render :partial => 'layouts/form_buttons', :locals => { :what => @product.new_record? ? 'Cadastrar' : 'Atualizar',
+    :who => 'produtos',
+    :where => products_path }
