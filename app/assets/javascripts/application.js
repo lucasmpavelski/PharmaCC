@@ -18,6 +18,18 @@ function makeOptions (data, first)
     });
   return output.join('');
 }
+
+function preset (id, value)
+{
+  if (value != "")
+  {
+    alert(id);
+    $(id).each( function () {
+        alert($(this, "option"));
+    });
+  }
+}
+
 jQuery(function () {
 
     $("select.update_cities_select").each( function () {
@@ -25,9 +37,15 @@ jQuery(function () {
       var state = $(this).find("option:selected").val();
       if (state == "") state = "0";
       jQuery.getJSON('/cities_json/' + state, function(data){
-        $('#provider_city_id_input').html(makeOptions(data, "Cidades"));
+        $('#provider_city_id').html(makeOptions(data, "Selecione a cidade"));
         });
       };
+      this.onload = function () {
+        var action = location.toString().split("/").pop();
+        if (action == "edit") {
+          
+        }
+      }
       });
 
     $("#providers").dataTable();

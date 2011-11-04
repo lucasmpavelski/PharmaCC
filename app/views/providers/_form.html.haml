@@ -30,7 +30,7 @@
   -#= f.text_field :phone
 -#.actions
   -#= f.submit
-- debug @provider
+-#= debug params
 = semantic_form_for @provider do |f|
   = f.inputs do
 
@@ -51,12 +51,20 @@
             %td
               Estado
             %td
-              = select_tag :state, options_from_collection_for_select(State.all, "id", "name"), :class => 'update_cities_select'
+              = f.input :state_id, 
+                :as => :select, :collection => State.all, 
+                :label => false,
+                :input_html => { :name => "state_id",
+                                 :class => 'update_cities_select'}
           %tr
             %td
               Cidade
             %td
-              = select_tag :provider_city_id_input, [["Selecione um estado"]], :name => "provider[city_id]", :input_html => { :size => "40" }, :prompt => "Selecione um estado"
+              - city_col = @provider.new_record? ? [] : City.where(:state_id => @provider.city.state_id)
+              = f.input :city_id,
+                :as => :select, :collection => city_col, 
+                :prompt => "Selecione o estado",  
+                :label => false 
           %tr
             %td
               Endereço
