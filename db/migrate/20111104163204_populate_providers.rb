@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class PopulateProviders < ActiveRecord::Migration
   def up
     Provider.create do |p|

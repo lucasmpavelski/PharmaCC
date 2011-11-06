@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class PopulateProducts < ActiveRecord::Migration
   def up
     Product.create do |p|
