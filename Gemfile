@@ -32,3 +32,4 @@ gem 'client_side_validations'
 # To use debugger
 # gem 'ruby-debug'
 
+gem 'therubyracer'
