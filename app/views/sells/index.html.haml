@@ -1,0 +1,13 @@
+%h1 Listing sells
+%table
+  %tr
+    %th
+    %th
+    %th
+  - @sells.each do |sell|
+    %tr
+      %td= link_to 'Show', sell
+      %td= link_to 'Edit', edit_sell_path(sell)
+      %td= link_to 'Destroy', sell, confirm: 'Are you sure?', method: :delete
+%br/
+= link_to 'New Sell', new_sell_path

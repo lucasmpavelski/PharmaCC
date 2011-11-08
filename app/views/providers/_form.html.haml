@@ -31,7 +31,7 @@
 -#.actions
   -#= f.submit
 -#= debug params
-= semantic_form_for @provider do |f|
+= semantic_form_for @provider, :validate => true do |f|
   = f.inputs do
 
     %pre

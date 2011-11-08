@@ -1,4 +1,6 @@
 PharmaCC::Application.routes.draw do
+  resources :sells
+
   get "static_pages/home"
   get "static_pages/help"
 
