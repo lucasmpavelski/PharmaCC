@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.where("name like ?", "%#{params[:q]}%")
+    @products = Product.where("lower(name) like lower(?)", "%#{params[:q]}%")
 
     respond_to do |format|
       format.html # index.html.erb

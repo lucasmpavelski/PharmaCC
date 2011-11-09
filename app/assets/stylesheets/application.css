@@ -521,3 +521,19 @@ table {
 .has_a_datatable {
 	width: 100%;
 }
+
+#nota {
+overflow: auto;
+}
+
+#nota a, a:visited {
+ color: blue;
+}
+#nota a:hover {
+text-decoration: underline;
+}
+
+#nota li {
+font-size: medium;
+
+}

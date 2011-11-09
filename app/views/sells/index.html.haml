@@ -1,13 +1,25 @@
-%h1 Listing sells
-%table
-  %tr
-    %th
-    %th
-    %th
-  - @sells.each do |sell|
-    %tr
-      %td= link_to 'Show', sell
-      %td= link_to 'Edit', edit_sell_path(sell)
-      %td= link_to 'Destroy', sell, confirm: 'Are you sure?', method: :delete
-%br/
-= link_to 'New Sell', new_sell_path
+
+%table{ :style => "width: 100%;" }
+  %th{ :align => "center" }
+    Gerência de Vendas
+
+#sells_mng.has_a_datatable
+  %table#sells
+    %thead
+      %tr
+        %td
+          %center
+            Código
+        %td
+          %center
+            Ações
+    %tbody
+      - @sells.each do |sell|
+        %tr
+          %td
+            = sell.id
+          %td
+            = link_to (image_tag "edit.png", :alt => "editar cadastro"), edit_sell_path(sell)
+            = link_to (image_tag "remove.png", :alt => "editar cadastro"), sell, :confirm => 'Deseja mesmo excluir esta Venda?', :method => :delete
+
+= render :partial => 'layouts/mng_buttons', :locals => { :new_path => new_sell_path }

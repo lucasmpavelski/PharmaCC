@@ -72,6 +72,6 @@
             = provider.city.state.name
           %td
             = link_to (image_tag "edit.png", :alt => "editar cadastro"), edit_provider_path(provider)
-            = link_to (image_tag "remove.png", :alt => "editar cadastro"), provider, :confirm => 'Are you sure?', :method => :delete
+            = link_to (image_tag "remove.png", :alt => "editar cadastro"), provider, :confirm => 'Deseja mesmo excluir este fornecedor?', :method => :delete
 
 = render :partial => 'layouts/mng_buttons', :locals => { :new_path => new_provider_path }

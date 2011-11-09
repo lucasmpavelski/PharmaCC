@@ -1,7 +1,8 @@
 = semantic_form_for @sell do |f| 
+ 
   = f.inputs do
     /= f.input :products, :as => :check_boxes, :collection => Product.all
     = f.input :product_tokens, :as => :string, :input_html => { "data-pre" => @sell.products.map(&:attributes).to_json }
 
   = f.buttons do 
-    = f.commit_button 
+    = f.commit_button "Concluir Venda"
