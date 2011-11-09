@@ -1,6 +1,8 @@
 class Sell < ActiveRecord::Base
   attr_accessible :products, :product_tokens
 
+  belongs_to :user
+
   has_many :sell_products
   has_many :products, :through => :sell_products
 

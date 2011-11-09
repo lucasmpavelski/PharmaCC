@@ -537,3 +537,22 @@ text-decoration: underline;
 font-size: medium;
 
 }
+
+li {
+   list-style: none;
+}
+
+.main a {
+    color: blue;
+    font-size: medium;
+}
+.main p { font-size: large; }
+.main #notice { color: red; }
+.main a:hover { color: #333; text-decoration: underline;}
+
+#help pre {
+ width: 900px;
+ height: 480px;
+ white-space: normal;
+ text-align: left;
+}

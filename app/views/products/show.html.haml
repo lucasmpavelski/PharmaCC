@@ -1,29 +1,30 @@
 %p#notice
-  = notice
+  - if !notice.nil?
+    %p Produto cadastrado com sucesso, confira se os dados estão corretos.
 %p
   %b
-    Name:
+    Nome:
   = @product.name
 %p
   %b
-    Code:
+    Código:
   = @product.code
 %p
   %b
-    Provider:
-  = @product.provider
+    Fornecedor:
+  = @product.provider.name
 %p
   %b
-    Price:
+    Preço:
   = @product.price
 %p
   %b
-    Amount:
+    Quantidade:
   = @product.amount
 %p
   %b
-    Laboratory:
+    Laboratório:
   = @product.laboratory
-= link_to 'Edit', edit_product_path(@product)
+= link_to 'Editar dados', edit_product_path(@product)
 |
-= link_to 'Back', products_path
+= link_to 'Continuar', products_path

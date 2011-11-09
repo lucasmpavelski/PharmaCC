@@ -19,9 +19,9 @@
             %td
               = f.input :provider, :as => :select, :label => false
           
-              = f.fields_for :privider do |builder| 
+              -#= f.fields_for :privider do |builder| 
                 = render "provider/form", :f => builder 
-              = link_to_add_fields "Add Question", f, :providers
+              -#= link_to_add_fields "Add Question", f, :providers
           %tr
             %td
               Preço

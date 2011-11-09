@@ -1,0 +1,49 @@
+%table{ :style => "width: 100%;" }
+  %th{ :align => "center" }
+    Gerência de Produto
+
+#users_mng.has_a_datatable
+  %table#users
+    %thead
+      %tr
+        %td
+          %center
+            Nome
+        %td
+          %center
+            RG
+        %td
+          %center
+            CPF
+        %td
+          %center
+            Endereço
+        %td
+          %center
+            Telefone
+        %td
+          %center
+            E-mail
+        %td
+          %center
+            Ações
+    %tbody
+      - @users.each do |user|
+        %tr
+          %td
+            = user.name
+          %td
+            = user.rg
+          %td
+            = user.cpf
+          %td
+            = user.address
+          %td
+            = user.phone
+          %td
+            = user.email
+          %td
+            = link_to (image_tag "edit.png", :alt => "editar cadastro"), edit_user_registration_path(user)
+            = link_to (image_tag "remove.png", :alt => "editar cadastro"), user, :confirm => 'Are you sure?', :method => :delete
+
+= render :partial => 'layouts/mng_buttons', :locals => { :new_path => new_user_registration_path }

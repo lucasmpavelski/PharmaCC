@@ -1,6 +1,6 @@
 .header
   %p.logo
-    %a{ :href => "#" }
+    = link_to root_path do
       = image_tag "logo.png", :alt => "PharmaCC"
       PharmaCC
     Sistema de gerenciamento de farmácias
@@ -18,7 +18,7 @@
               Gerenciar
         %ul
           %li
-            = link_to 'Usuários', '#'
+            = link_to 'Usuários', users_path
           %li
             = link_to 'Produtos', products_path
           %li

@@ -1,4 +1,14 @@
 PharmaCC::Application.routes.draw do
+
+  devise_for :users do
+#    get 'signin' => 'devise/sessions#new', :as => :new_user_session
+    #post 'signin' => 'devise/sessions#create', :as => :user_session
+    #get 'signout' => 'devise/sessions#destroy', :as => :destroy_user_session
+    get "/users/sign_out" => "devise/sessions#destroy", :as => :destroy_user_session
+  end
+
+  resources :users
+
   resources :sells
 
   get "static_pages/home"

@@ -1,8 +1,9 @@
 %p#notice
-  = notice
+  - if !notice.nil?
+    %p Fornecedor cadastrado com sucesso, confira se os dados estão corretos.
 %p
   %b
-    Name:
+    Nome:
   = @provider.name
 %p
   %b
@@ -10,16 +11,16 @@
   = @provider.cnpj
 %p
   %b
-    Address:
+    Endereço:
   = @provider.address
 %p
   %b
-    City:
+    Cidade:
   = @provider.city
 %p
   %b
-    Phone:
+    Telefone:
   = @provider.phone
-= link_to 'Edit', edit_provider_path(@provider)
+= link_to 'Editar dados', edit_provider_path(@provider)
 |
-= link_to 'Back', providers_path
+= link_to 'Continuar', providers_path
