@@ -521,3 +521,15 @@ table {
 .has_a_datatable {
 	width: 100%;
 }
+
+li {
+   list-style: none;
+}
+
+.main a {
+    color: blue;
+    font-size: medium;
+}
+.main p { font-size: large; }
+.main #notice { color: red; }
+.main a:hover { color: #333; text-decoration: underline;}

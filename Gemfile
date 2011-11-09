@@ -22,6 +22,7 @@ gem 'jquery-rails'
 gem 'haml'
 gem 'formtastic'
 gem 'client_side_validations'
+gem 'devise'
 
 # Use unicorn as the web server
 # gem 'unicorn'

@@ -3,3 +3,11 @@
 
 en:
   hello: "Hello world"
+
+  errors:
+    messages:
+      blank: "Este campo não pode ficar vazio."
+  activerecord:
+      errors:
+          messages:
+              taken: "Este dado já existe. Entre com outro valor no campo."

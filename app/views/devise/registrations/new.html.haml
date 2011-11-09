@@ -1,0 +1,62 @@
+-#%h2 Sign up
+-#= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+  -#= devise_error_messages!
+  -#%div
+    -#= f.label :email
+    -#%br/
+    -#= f.email_field :email
+  -#%div
+    -#= f.label :password
+    -#%br/
+  -#%div
+    -#%br/
+    -#= f.password_field :password_confirmation
+  -#%div= f.submit "Sign up"
+-#= render :partial => "devise/shared/links"
+
+= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+  %table{:style => "width: 100%;"}
+    %tr
+      %th{:align => "center"} Cadastrar novo usuário
+  %pre/
+  %table
+    %tbody
+      %tr
+        %td Nome
+        %td
+          = f.text_field :name, :size => "40"
+      %tr
+        %td RG
+        %td
+          = f.text_field :rg, :size => "40"
+      %tr
+        %td CPF
+        %td
+          = f.text_field :cpf, :size => "40"
+      %tr
+        %td Endereço
+        %td
+          = f.text_field :address, :size => "40"
+      %tr
+        %td Telefone
+        %td
+          = f.text_field :phone, :size => "40"
+      %tr
+        %td E-mail
+        %td
+          = f.email_field :email, :size => "40"
+      %tr
+        %td Senha
+        %td
+          = f.password_field :password
+      %tr
+        %td Confirmar senha
+        %td
+          = f.password_field :password_confirmation
+
+  %p{:align => "center"}
+    %input{:name => "OKBTN", :type => "submit", :value => "Cadastrar"}>/
+    \&nbsp;&nbsp;&nbsp;
+    %input{:type => "reset", :value => "Limpar"}>/
+    \&nbsp;&nbsp;&nbsp;
+    %input{:onclick => "location.href='gerenciarUsuario.html'", :type => "button", :value => "Menu principal"}/
