@@ -1,1 +1,72 @@
-\=P
+#help
+  %pre
+    %h3 Login
+    %p Campos: Login e senha, em que o usuário irá digitar seu login e senha nos devidos campos para que ocorra a validação e consequentemente a entrada no sistema.
+    %p A tela de login também possui os botões “Limpar” e “Ok”, que tem por funcionalidades limpar as caixas de textos e fazer a validação do login respectivamente. O link “Esqueci minha senha” também pode ser ativada para que ocorra a recuperação de senha. Essa recuperação é feita a partir do e-mail, ou seja, se o usuário esqueceu sua senha, ele clica em “Esqueci menha senha” e digita o e-mail cadastrado, assim uma nova senha será enviada ao e-mail dado.
+
+    %h3 Tela Principal
+    %p Botões: usuários, produtos, fornecedores e vendas.
+    %p Ao clicar no botão “usuário” o atual usuário do sistema será redirecionado para a tela de gerência de usuário, onde ele poderá cadastrar, alterar ou excluir usuários.
+    %p Os botões “produtos” e “fornecedores” são parecidos com o botão “usuário”, ou seja, ao clicar neles o usuário poderá cadastrar, alterar e excluir produtos ou fornecedores.
+
+    %h3 Vendas
+    %p Campos: busca, tabela de produtos em estoque, tabela de produtos relacionados para venda, os botões: adicionar, remover, concluir venda, limpar e menu principal.
+    %p Ao usuário efetuar uma busca de produtos na caixa de texto referente ao campo “Busca”, o resultado será exibido na tabela de produtos em estoque e essa tabela conterá os campos: código, nome, preço, quantidade, laboratório. Nessa tabela, o usuário poderá selecionar o produto desejado para a venda e acionar o botão “Adicionar”. Ao realizar tal ação, uma caixa com a quantidade desejada irá aparecer e o usuário especificará a quantidade a ser vendida, após isso o produto selecionado será adicionado na tabela de produtos relacionados para venda.
+    %p Caso o usuário queira remover um produto da tabela de produtos relacionados a venda, ele poderá selecionar o produto desejado e acionar o botão “Remover”.
+    %p Após ter todos os produtos desejados para a venda, o usuário deverá acionar o botão “Concluir venda” para que está seja realizada.
+    %p Os botões “Limpar” e “Menu Principal” quando acionados irão respectivamente limpar os campos preenchidos e redirecionar para a “Tela Principal”.
+
+    %h3 Gerência de Usuário
+    %p Campos: busca, tabela de resultados da busca e botões: menu principal e cadastrar novo.
+    %p Ao usuário efetuar uma busca de usuários na caixa de texto referente ao campo “Busca”, o resultado será exibido na tabela de resultados, e essa tabela conterá os campos: Nome, idade, privilégio e um campo de duas alternativas, uma alterar e outra excluir. Se o usuário clicar no campo alterar, o mesmo será redirecionado para a tela “Alterar usuário”, se clicar no campo excluir o sistema retornará uma mensagem de questionamento, perguntando se o usuário deseja realmente excluir o usuário selecionado.
+    %p O botão “Menu principal” quando acionado, o usuário é redirecionado a “Tela Principal”, já o botão “Cadastrar novo”, o usuário será redirecionado para a tela “Cadastrar novo usuário”.
+
+    %h3 Gerência de Produto
+    %p Campos: Busca, tabela de resultados da busca e botões: menu principal e cadastrar novo.
+    %p Ao usuário efetuar uma busca de produtos na caixa de texto referente ao campo “Busca”, o resultado será exibido na tabela de resultados, e essa tabela conterá os campos: código, nome, preço, quantidade, laboratório e um campo de duas alternativas, uma alterar e outra excluir.
+    %p Se o usuário clicar no campo alterar, o mesmo será redirecionado para a tela “Alterar produto”, se clicar no campo excluir o sistema retornará uma mensagem de questionamento, perguntando se o usuário deseja realmente excluir o produto selecionado.
+    %p O botão “Menu principal” quando acionado, o usuário é redirecionado a “Tela Principal”, já o botão “Cadastrar novo”, o usuário será redirecionado para a tela “Cadastrar novo produto”.
+
+    %h3 Gerência de Fornecedor
+    %p Campos: Busca, tabela de resultados da busca e botões: menu principal e cadastrar novo.
+    %p Ao usuário efetuar uma busca de produtos na caixa de texto referente ao campo “Busca”, o resultado será exibido na tabela de resultados, e essa tabela conterá os campos: CNPJ, nome, cidade, estado e um campo de duas alternativas, uma alterar e outra excluir.
+    %p Se o usuário clicar no campo alterar, o mesmo será redirecionado para a tela “Alterar fornecedor”, se clicar no campo excluir o sistema retornará uma mensagem de questionamento, perguntando se o usuário deseja realmente excluir o fornecedor selecionado.
+    %p O botão “Menu principal” quando acionado, o usuário é redirecionado a “Tela Principal”, já o botão “Cadastrar novo”, o usuário será redirecionado para a tela “Cadastrar novo fornecedor”.
+
+    %h3 Cadastrar Novo Usuário
+    %p Campos: nome, RG, CPF, endereço, telefone, privilégio, e-mail, usuário, senha, confirmar senha e os botões: cadastrar, limpar e menu principal.
+    %p Todos os campos deverão ser preenchido se e o campo privilégio terá apenas duas opções: Administrador que poderá utilizar todas as opções do sistema e Atendente que poderá apenas efetuar vendas.
+    %p Os campos senha e confirmar senha são campos de validação, ou seja, o cadastro só será realizado se os dois campos estiverem preenchidos igualmente.
+    %p Após o preenchimento de todos os campos fornecidos, o botão “Cadastrar” deverá ser acionado para que ocorra o cadastro.
+    %p Ao acionar o botão “Limpar” o usuário será redirecionado para a tela de “Gerência de usuário” e se o botão “Menu principal” for acionado, o usuário será redirecionado para a “Tela Principal”.
+
+    %h3 Alterar usuário
+    %p Campos: nome, RG, CPF, endereço, telefone, privilégio, e-mail, usuário, senha, confirmar senha e os botões: alterar, cancelar e menu principal.
+    %p Todos os campos estarão preenchidos com os dados do usuário selecionado na tela “Gerenciar usuário”, que é o único caminho para alterar o usuário. No campo privilégio terá apenas duas opções: Administrador que poderá utilizar todas as opções do sistema e Atendente que poderá apenas efetuar vendas.
+    %p Os campos senha e confirmar senha são campos de validação, ou seja, a alteração destes campos só será realizado se os dois campos estiverem preenchidos igualmente.
+    %p Após o preenchimento dos campos desejados na alteração do usuário, o botão “Alterar” deverá ser acionado para que ocorra as alterações.
+    %p Ao acionar o botão “Cancelar” o usuário será redirecionado para a tela de “Gerência de usuário” e se o botão “Menu principal” for acionado, o usuário será redirecionado para a “Tela Principal”.
+
+    %h3 Cadastrar Novo Produto
+    %p Campos: nome, código, fornecedor, preço, quantidade, laboratório e os botões: cadastrar, limpar e menu principal, também possui um link “Fornecedor não cadastrado?”.
+    %p Todos os campos deverão ser preenchidos para a realização do cadastro do novo produto, caso o fornecedor não exista, o link “Fornecedor não cadastrado?” deverá ser ativado para que um novo fornecedor seja cadastrado.
+    %p Após todos os campos serem preenchidos, o botão “Cadastrar” deverá ser ativo para a realização do cadastro.
+    %p Os botões “Limpar” e “Menu Principal” quando acionados irão respectivamente limpar os campos preenchidos e redirecionar para a “Tela Principal”.
+
+    %h3 Alterar Produto
+    %p Campos: nome, código, fornecedor, preço, quantidade, laboratório e os botões: cadastrar, limpar e menu principal, também possui um link “Fornecedor não cadastrado?”.
+    %p Ao iniciar essa tela, os campos estarão preenchidos com as informações do produto selecionado na tela “Gerenciar Produto”.
+    %p Após as alterações feitas nas informações, o usuário deverá acionar o botão “Alterar” para que ocorra as alterações desejadas.
+    %p Os botões “Limpar” e “Menu Principal” quando acionados irão respectivamente limpar os campos preenchidos e redirecionar para a “Tela Principal”.
+
+    %h3 Cadastrar Fornecedor
+    %p Campos: nome, CNPJ, estado, cidade, endereço, telefone e os botões: cadastrar, limpar e menu principal.
+    %p Todos os campos deverão ser preenchidos para a realização do cadastro do novo fornecedor. Ao preencher o campo estado, automaticamente o campo cidade conterá apenas as cidades do estado selecionado.
+    %p Após o preenchimento de todos os campos, o botão “Cadastrar” deve ser acionado para a realização do cadastro.
+    %p Os botões “Limpar” e “Menu Principal” quando acionados irão respectivamente limpar os campos preenchidos e redirecionar para a “Tela Principal”.
+
+    %h3 Alterar Fornecedor
+    %p Campos: nome, CNPJ, estado, cidade, endereço, telefone e os botões: cadastrar, limpar e menu principal.
+    %p Ao iniciar essa tela, os campos estarão preenchidos com as informações do fornecedor selecionado na tela “Gerenciar Fornecedor”.
+    %p Após as alterações feitas nas informações, o usuário deverá acionar o botão “Alterar” para que ocorra as alterações desejadas.
+    %p Os botões “Limpar” e “Menu Principal” quando acionados irão respectivamente limpar os campos preenchidos e redirecionar para a “Tela Principal”.

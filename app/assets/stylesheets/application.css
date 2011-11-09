@@ -533,3 +533,10 @@ li {
 .main p { font-size: large; }
 .main #notice { color: red; }
 .main a:hover { color: #333; text-decoration: underline;}
+
+#help pre {
+ width: 900px;
+ height: 480px;
+ white-space: normal;
+ text-align: left;
+}
