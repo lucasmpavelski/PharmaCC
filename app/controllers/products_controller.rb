@@ -2,11 +2,11 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    @products = Product.where("name like ?", "%#{params[:q]}%")
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render :json => @products }
+      format.json { render :json => @products.map(&:attributes) }
     end
   end
 
@@ -14,11 +14,6 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     @product = Product.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render :json => @product }
-    end
   end
 
   # GET /products/new

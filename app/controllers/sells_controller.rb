@@ -3,22 +3,12 @@ class SellsController < ApplicationController
   # GET /sells.json
   def index
     @sells = Sell.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @sells }
-    end
   end
 
   # GET /sells/1
   # GET /sells/1.json
   def show
     @sell = Sell.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @sell }
-    end
   end
 
   # GET /sells/new

@@ -67,3 +67,9 @@ function add_fields(link, association, content) {
     before: content.replace(regexp, new_id)
   });
 }
+
+$(function (){
+	$("#sell_product_tokens").tokenInput("/products.json", { 
+		crossDomain: false, 
+		prePopulate: $("#ad_accessory_tokens").data("pre")
+		})});
