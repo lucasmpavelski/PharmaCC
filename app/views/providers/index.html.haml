@@ -56,9 +56,10 @@
         %td
           %center
             Estado
-        %td
-          %center
-            Ações
+        - if (can? :edit, Provider) or (can? :destroy, Provider)
+          %td
+            %center
+              Ações
     %tbody
       - @providers.each do |provider|
         %tr
@@ -70,8 +71,11 @@
             = provider.city.name
           %td
             = provider.city.state.name
-          %td
-            = link_to (image_tag "edit.png", :alt => "editar cadastro"), edit_provider_path(provider)
-            = link_to (image_tag "remove.png", :alt => "editar cadastro"), provider, :confirm => 'Deseja mesmo excluir este fornecedor?', :method => :delete
+          - if (can? :edit, provider) or (can? :destroy, provider)
+            %td
+              - if can? :edit, provider
+                = link_to (image_tag "edit.png", :alt => "editar cadastro"), edit_provider_path(provider)
+              - if can? :remove, provider
+                = link_to (image_tag "remove.png", :alt => "editar cadastro"), provider, :confirm => 'Deseja mesmo excluir este fornecedor?', :method => :delete
 
-= render :partial => 'layouts/mng_buttons', :locals => { :new_path => new_provider_path }
+= render :partial => 'layouts/mng_buttons', :locals => { :new_path => new_provider_path, :what => Provider }

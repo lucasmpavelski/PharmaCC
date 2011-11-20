@@ -12,14 +12,24 @@
             Código
         %td
           %center
-            Ações
+            Realizada em:
+        - if (can? :edit, Sell) or (can? :destroy, Sell)
+          %td
+            %center
+              Ações
     %tbody
       - @sells.each do |sell|
-        %tr
-          %td
-            = sell.id
-          %td
-            = link_to (image_tag "edit.png", :alt => "editar cadastro"), edit_sell_path(sell)
-            = link_to (image_tag "remove.png", :alt => "editar cadastro"), sell, :confirm => 'Deseja mesmo excluir esta Venda?', :method => :delete
+        - if can? :read, sell
+          %tr
+            %td
+              = sell.id
+            %td
+              = sell.created_at.in_time_zone
+            - if (can? :edit, sell) or (can? :destroy, sell)
+              %td
+                - if can? :edit, sell
+                  = link_to (image_tag "edit.png", :alt => "editar cadastro"), edit_sell_path(sell)
+                - if can? :destroy, sell
+                  = link_to (image_tag "remove.png", :alt => "editar cadastro"), sell, :confirm => 'Deseja mesmo excluir esta Venda?', :method => :delete
 
-= render :partial => 'layouts/mng_buttons', :locals => { :new_path => new_sell_path }
+= render :partial => 'layouts/mng_buttons', :locals => { :new_path => new_sell_path, :what => Sell }

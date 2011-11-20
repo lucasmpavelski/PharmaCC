@@ -1,0 +1,66 @@
+-#<%= semantic_form_for @user do |f| %>
+  -#<%= f.inputs do %>
+    -#<%= f.input :name %>
+    -#<%= f.input :rg %>
+    -#<%= f.input :cpf %>
+    -#<%= f.input :address %>
+    -#<%= f.input :phone %>
+    -#<%= f.input :email %>
+  -#<% end %>
+
+  -#<%= f.buttons do %>
+    -#<%= f.commit_button %>
+  -#<% end %>
+-#<% end %>
+
+
+= form_for(@user, :url => registration_path("user")) do |f|
+  %table{:style => "width: 100%;"}
+    %tr
+      %th{:align => "center"} Cadastrar novo usuário
+  %pre/
+  %table
+    %tbody
+      %tr
+        %td Tipo
+        %td
+          = select_tag "role", options_from_collection_for_select(Role.all, "id", "name")
+      %tr
+        %td Nome
+        %td
+          = f.text_field :name, :size => "40"
+      %tr
+        %td RG
+        %td
+          = f.text_field :rg, :size => "40"
+      %tr
+        %td CPF
+        %td
+          = f.text_field :cpf, :size => "40"
+      %tr
+        %td Endereço
+        %td
+          = f.text_field :address, :size => "40"
+      %tr
+        %td Telefone
+        %td
+          = f.text_field :phone, :size => "40"
+      %tr
+        %td E-mail
+        %td
+          = f.email_field :email, :size => "40"
+      %tr
+        %td Senha
+        %td
+          = f.password_field :password
+      %tr
+        %td Confirmar senha
+        %td
+          = f.password_field :password_confirmation
+
+  %p{:align => "center"}
+    %input{:name => "OKBTN", :type => "submit", :value => "Cadastrar"}>/
+    \&nbsp;&nbsp;&nbsp;
+    %input{:type => "reset", :value => "Limpar"}>/
+    \&nbsp;&nbsp;&nbsp;
+    %input{:onclick => "location.href='gerenciarUsuario.html'", :type => "button", :value => "Menu principal"}/

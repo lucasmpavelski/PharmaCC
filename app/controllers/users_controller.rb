@@ -1,25 +1,27 @@
 class UsersController < ApplicationController
+
+  load_and_authorize_resource
   # GET /users
   # GET /users.json
-  def index
-    @users = User.all
+#  def index
+    #@users = User.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render :json => @users }
-    end
-  end
+    #respond_to do |format|
+      #format.html # index.html.erb
+      #format.json { render :json => @users }
+    #end
+  #end
 
-  # GET /users/1
-  # GET /users/1.json
-  def show
-    @user = User.find(params[:id])
+  ## GET /users/1
+  ## GET /users/1.json
+  #def show
+    #@user = User.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render :json => @user }
-    end
-  end
+    #respond_to do |format|
+      #format.html # show.html.erb
+      #format.json { render :json => @user }
+    #end
+  #end
 
   # GET /users/new
   # GET /users/new.json
@@ -41,6 +43,7 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(params[:user])
+    @user.roles << Role.find(params[:role])
 
     respond_to do |format|
       if @user.save
@@ -69,15 +72,15 @@ class UsersController < ApplicationController
     end
   end
 
-  # DELETE /users/1
-  # DELETE /users/1.json
-  def destroy
-    @user = User.find(params[:id])
-    @user.destroy
+  ## DELETE /users/1
+  ## DELETE /users/1.json
+  #def destroy
+    #@user = User.find(params[:id])
+    #@user.destroy
 
-    respond_to do |format|
-      format.html { redirect_to users_url }
-      format.json { head :ok }
-    end
-  end
+    #respond_to do |format|
+      #format.html { redirect_to users_url }
+      #format.json { head :ok }
+    #end
+  #end
 end

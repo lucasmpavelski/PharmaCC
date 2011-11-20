@@ -1,4 +1,6 @@
 class StatesController < ApplicationController
+
+  before_filter :authenticate_user!
   # GET /states
   # GET /states.json
   def index
