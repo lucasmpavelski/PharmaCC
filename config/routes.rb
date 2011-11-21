@@ -1,5 +1,13 @@
 PharmaCC::Application.routes.draw do
 
+  get "report/sell"
+
+  get "report/user"
+
+  get "report/product"
+
+  get "report/provider"
+
   devise_for :users do
 #    get 'signin' => 'devise/sessions#new', :as => :new_user_session
     #post 'signin' => 'devise/sessions#create', :as => :user_session

@@ -1,0 +1,11 @@
+%table
+  %tr
+    %td Usuário
+    %td Data de venda
+    %td Quantidade de produtos vendidos
+  - @report.each do |sell|
+    %tr
+      %td= sell.user.name
+      %td= sell.created_at
+      %td= sell.products.count
+

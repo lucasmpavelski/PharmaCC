@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(:version => 20111108215520) do
   add_index "sell_products", ["sell_id"], :name => "index_sell_products_on_sell_id"
 
   create_table "sells", :force => true do |t|
+    t.integer  "user_id_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
