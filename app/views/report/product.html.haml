@@ -1,15 +1,16 @@
-%table
-  %tr
-    %td Código
-    %td Nome
-    %td Fornecedor
-    %td Preço
-    %td Laboratório
-  - @report.each do |product|
+%pre
+  %table
     %tr
-      %td= product.name
-      %td= product.code
-      %td= product.provider.name
-      %td= product.price
-      %td= product.amount
-      %td= product.laboratory
+      %td Código
+      %td Nome
+      %td Fornecedor
+      %td Preço
+      %td Laboratório
+    - @report.each do |product|
+      %tr
+        %td= product.name
+        %td= product.code
+        %td= product.provider.name
+        %td= product.price
+        %td= product.amount
+        %td= product.laboratory

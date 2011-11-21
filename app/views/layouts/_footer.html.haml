@@ -3,7 +3,7 @@
     %span
       - if user_signed_in?
         = "Olá " + current_user.name
-        = link_to "(Logout)", destroy_user_session_path
+        = link_to "(Logout)", logout_path
       - else
         Nenhum usuário logado.
 #design

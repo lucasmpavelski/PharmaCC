@@ -18,11 +18,14 @@
               Gerenciar
         %ul
           %li
-            = link_to 'Usuários', users_path
+            - if can? :read, User
+              = link_to 'Usuários', users_path
           %li
-            = link_to 'Produtos', products_path
+            - if can? :read, Product
+              = link_to 'Produtos', products_path
           %li
-            = link_to 'Fornecedores', providers_path
+            - if can? :read, Provider
+              = link_to 'Fornecedores', providers_path
       %li.page_item
         %a{ :href => "#" }
           %span
@@ -30,13 +33,13 @@
               Listar
         %ul
           %li
-            %a{ :href => "#" }
+            = link_to report_product_path do 
               Relatórios Produtos
           %li
-            %a{ :href => "#" }
-              Relatórios Fornecedores
+            = link_to report_sell_path do
+              Relatórios Vendas
           %li
-            %a{ :href => "#" }
+            = link_to report_user_path do
               Relatórios Usuários
       %li.page_item
         = link_to static_pages_help_path do 
@@ -44,7 +47,7 @@
             %span
               Ajuda
       %li.page_item
-        %a{ :href => "#" }
+        = link_to logout_path do
           %span
             %span
               Sair

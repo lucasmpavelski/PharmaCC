@@ -23,6 +23,7 @@ gem 'haml'
 gem 'formtastic'
 gem 'client_side_validations'
 gem 'devise'
+gem 'cancan'
 
 # Use unicorn as the web server
 # gem 'unicorn'

@@ -1,4 +1,6 @@
 class SellsController < ApplicationController
+
+  load_and_authorize_resource
   # GET /sells
   # GET /sells.json
   def index
@@ -30,10 +32,16 @@ class SellsController < ApplicationController
   # POST /sells
   # POST /sells.json
   def create
-    @sell = Sell.new(params[:sell])
+    @sell = current_user.sells.new(params[:sell])
 
     respond_to do |format|
       if @sell.save
+
+        for product in @sell.products
+          product.amount = product.amount - 1
+          product.save!
+        end
+
         format.html { redirect_to @sell, notice: 'Sell was successfully created.' }
         format.json { render json: @sell, status: :created, location: @sell }
       else

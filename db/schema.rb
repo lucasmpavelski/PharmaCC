@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111108215520) do
+ActiveRecord::Schema.define(:version => 20111120135729) do
 
   create_table "cities", :force => true do |t|
     t.string   "name"
@@ -45,6 +45,17 @@ ActiveRecord::Schema.define(:version => 20111108215520) do
 
   add_index "providers", ["city_id"], :name => "index_providers_on_city_id"
 
+  create_table "roles", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "roles_users", :id => false, :force => true do |t|
+    t.integer "role_id"
+    t.integer "user_id"
+  end
+
   create_table "sell_products", :force => true do |t|
     t.integer  "sell_id"
     t.integer  "product_id"
@@ -56,7 +67,7 @@ ActiveRecord::Schema.define(:version => 20111108215520) do
   add_index "sell_products", ["sell_id"], :name => "index_sell_products_on_sell_id"
 
   create_table "sells", :force => true do |t|
-    t.integer  "user_id_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

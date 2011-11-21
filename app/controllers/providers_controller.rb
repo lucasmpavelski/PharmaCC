@@ -1,4 +1,6 @@
 class ProvidersController < ApplicationController
+
+  load_and_authorize_resource
   # GET /providers
   # GET /providers.json
   def index

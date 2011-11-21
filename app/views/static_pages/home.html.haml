@@ -8,9 +8,10 @@
     %br
     Escolha a sua opção
 .buttons
-  = link_to '#', :class => 'button' do
-    = image_tag "usuarios.png", :alt => "USUÁRIOS"
-    USUÁRIOS
+  - if can? :read, User
+    = link_to users_path, :class => 'button' do
+      = image_tag "usuarios.png", :alt => "USUÁRIOS"
+      USUÁRIOS
   \&nbsp;&nbsp;&nbsp;
   = link_to products_path, :class => 'button' do
     = image_tag "produtos.png", :alt => "PRODUTOS"

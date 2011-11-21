@@ -8,13 +8,11 @@ PharmaCC::Application.routes.draw do
 
   get "report/provider"
 
-  devise_for :users do
-#    get 'signin' => 'devise/sessions#new', :as => :new_user_session
-    #post 'signin' => 'devise/sessions#create', :as => :user_session
-    #get 'signout' => 'devise/sessions#destroy', :as => :destroy_user_session
-    get "/users/sign_out" => "devise/sessions#destroy", :as => :destroy_user_session
+  devise_for :users, :controllers => {:registrations => "users"} 
+  devise_scope :user do
+    get '/login' => 'devise/sessions#new'
+    get '/logout' => 'devise/sessions#destroy'
   end
-
   resources :users
 
   resources :sells

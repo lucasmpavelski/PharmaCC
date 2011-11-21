@@ -46,4 +46,4 @@
             = link_to (image_tag "edit.png", :alt => "editar cadastro"), edit_user_registration_path(user)
             = link_to (image_tag "remove.png", :alt => "editar cadastro"), user, :confirm => 'Are you sure?', :method => :delete
 
-= render :partial => 'layouts/mng_buttons', :locals => { :new_path => new_user_registration_path }
+= render :partial => 'layouts/mng_buttons', :locals => { :new_path => new_user_registration_path, :what => User }

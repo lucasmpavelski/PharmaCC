@@ -40,4 +40,5 @@
 
   = render :partial => 'layouts/form_buttons', :locals => { :what => @product.new_record? ? 'Cadastrar' : 'Atualizar',
     :who => 'produtos',
-    :where => products_path }
+    :where => products_path,
+    :with => Product }

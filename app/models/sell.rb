@@ -1,5 +1,5 @@
 class Sell < ActiveRecord::Base
-  attr_accessible :products, :product_tokens
+  attr_accessible :products, :product_tokens, :user
 
   belongs_to :user
 
