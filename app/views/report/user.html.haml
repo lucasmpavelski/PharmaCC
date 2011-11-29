@@ -1,22 +1,23 @@
-%h1 Report#user
-%table
-  %tr
-    %td Nome
-    %td Email
-    %td Telefone
-    %td Endereço
-    %td Rg
-    %td CPF
-    %td Quantidade de vendas  
-  - @report.each do |user|
+%h1 Relatório de usuários
+%pre
+  %table
     %tr
-      %td= user.name
-      %td= user.email
-      %td= user.phone
-      %td= user.address
-      %td= user.rg
-      %td= user.cpf
-      %td= user.sells.count
-      
-      
-      
+      %td Nome
+      %td Email
+      %td Telefone
+      %td Endereço
+      %td Rg
+      %td CPF
+      %td Quantidade de vendas  
+    - @report.each do |user|
+      %tr
+        %td= user.name
+        %td= user.email
+        %td= user.phone
+        %td= user.address
+        %td= user.rg
+        %td= user.cpf
+        %td= user.sells.count
+= link_to "Gerar PDF" ,report_user_path(:format => :pdf)
+        
+        

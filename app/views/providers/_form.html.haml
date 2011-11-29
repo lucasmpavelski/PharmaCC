@@ -1,6 +1,7 @@
-= semantic_form_for @provider, :validate => true do |f|
-  = f.inputs do
-    %pre
+%pre
+  = semantic_form_for @provider, :validate => true do |f|
+    = f.inputs do
+      
       %table
         %tbody
           %tr
@@ -42,6 +43,6 @@
             %td
               = f.input :phone, :input_html => { :size => "40" }, :label => false
 
-  = render :partial => 'layouts/form_buttons', :locals => { :what => @provider.new_record? ? 'Cadastrar' : 'Atualizar',
+= render :partial => 'layouts/form_buttons', :locals => { :what => @provider.new_record? ? 'Cadastrar' : 'Atualizar',
     :who => 'fornecedores',
     :where => providers_path }

@@ -35,3 +35,5 @@ gem 'cancan'
 # gem 'ruby-debug'
 
 gem 'therubyracer'
+gem "prawnto"
+gem 'prawn'

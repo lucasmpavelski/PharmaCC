@@ -1,3 +1,4 @@
+%h1 Relatório de produtos
 %pre
   %table
     %tr
@@ -17,3 +18,4 @@
         %td= product.amount
         %td= product.laboratory
         %td= product.sells.count
+= link_to "Gerar PDF" ,report_product_path(:format => :pdf)

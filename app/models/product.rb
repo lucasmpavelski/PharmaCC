@@ -8,4 +8,8 @@ class Product < ActiveRecord::Base
   validates_uniqueness_of :code
 
   accepts_nested_attributes_for :provider
+  
+  def provider_name
+    provider.name
+  end
 end
