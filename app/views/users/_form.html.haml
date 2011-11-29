@@ -14,7 +14,7 @@
 -#<% end %>
 
 
-= form_for(@user, :url => registration_path("user")) do |f|
+= semantic_form_for(@user) do |f|
   %table{:style => "width: 100%;"}
     %tr
       %th{:align => "center"} Cadastrar novo usuário
