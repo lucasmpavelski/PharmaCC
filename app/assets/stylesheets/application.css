@@ -609,3 +609,9 @@ MENSAGENS DE ERRO
   .error_messages ul {
     margin: 0; }
 
+p.inline-errors{
+  margin: 0;
+  border: 2px solid #cf0000;
+  font-weight: bold;
+  background-color: #f0f0f0;
+}

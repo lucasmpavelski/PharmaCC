@@ -1,39 +1,5 @@
--#= form_for(@provider) do |f|
--#- if @provider.errors.any?
--##error_explanation
-  -#%h2
-    -#= pluralize(@provider.errors.count, "error")
-    -#prohibited this provider from being saved:
-  -#%ul
-    -#- @provider.errors.full_messages.each do |msg|
-    -#%li
-      -#= msg
--#.field
-  -#= f.label :name
-  -#%br
-  -#= f.text_field :name
--#.field
-  -#= f.label :cnpj
-  -#%br
-  -#= f.text_field :cnpj
--#.field
-  -#= f.label :address
-  -#%br
-  -#= f.text_field :address
--#.field
-  -#= f.label :city
-  -#%br
-  -#= f.text_field :city
--#.field
-  -#= f.label :phone
-  -#%br
-  -#= f.text_field :phone
--#.actions
-  -#= f.submit
--#= debug params
 = semantic_form_for @provider, :validate => true do |f|
   = f.inputs do
-
     %pre
       %table
         %tbody

@@ -12,8 +12,9 @@
         %td
           = f.password_field :password
           %br/
-          = f.check_box :remember_me \
-          = f.label "Lembrar senha?"
+          #remember_me
+            = f.check_box :remember_me 
+            = f.label "Lembrar senha?"
           = link_to "Esqueci minha senha!", new_password_path(resource_name)
 
   %p{:align => "center"}

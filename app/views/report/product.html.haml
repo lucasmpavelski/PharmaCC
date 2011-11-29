@@ -5,12 +5,15 @@
       %td Nome
       %td Fornecedor
       %td Preço
+      %td Quantidade
       %td Laboratório
+      %td Vendas realizadas
     - @report.each do |product|
       %tr
-        %td= product.name
         %td= product.code
+        %td= product.name
         %td= product.provider.name
         %td= product.price
         %td= product.amount
         %td= product.laboratory
+        %td= product.sells.count

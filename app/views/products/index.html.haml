@@ -47,6 +47,7 @@
               %td
                 - if can? :edit, product
                   = link_to (image_tag "edit.png", :alt => "editar cadastro"), edit_product_path(product)
+                \&nbsp;
                 - if can? :destroy, product
                   = link_to (image_tag "remove.png", :alt => "editar cadastro"), product, :confirm => 'Deseja remover o protudo ' + product.name + '?', :method => :delete
 

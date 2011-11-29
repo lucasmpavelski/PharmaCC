@@ -75,6 +75,7 @@
             %td
               - if can? :edit, provider
                 = link_to (image_tag "edit.png", :alt => "editar cadastro"), edit_provider_path(provider)
+              \&nbsp;
               - if can? :remove, provider
                 = link_to (image_tag "remove.png", :alt => "editar cadastro"), provider, :confirm => 'Deseja mesmo excluir este fornecedor?', :method => :delete
 

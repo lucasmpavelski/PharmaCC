@@ -1,0 +1,44 @@
+-#%p#notice= notice
+-##nota
+  %ul
+    - for p in @sell.products
+      %li
+        = p.code.to_s + " - " + p.name + " - " + p.price.to_s
+
+#nota
+  %h3 Nota fiscal
+  %table#users
+    %thead
+      %tr
+        %td
+          %center
+            Código
+        %td
+          %center
+            Produto
+        %td
+          %center
+            Preço
+    %tbody
+      - for p in @sell.products
+        %tr
+          %td
+            = p.code.to_s
+          %td
+            = p.name
+          %td
+            = p.price.to_s
+        %tr
+    %tfoot
+      %tr
+        %td
+          Total
+        %td
+          \-
+        %td
+          = @sell.total
+      %tr
+
+  = link_to 'Editar os dados cadastrados', edit_sell_path(@sell)
+  |
+  \#{link_to 'Continuar', sells_path}

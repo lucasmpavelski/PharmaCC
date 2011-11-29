@@ -4,9 +4,13 @@
       %td Usuário
       %td Data de venda
       %td Quantidade de produtos vendidos
+      %td Total
+      %td Nota fiscal
     - @sells.each do |sell|
       %tr
         %td= sell.user.name
         %td= sell.created_at
         %td= sell.products.count
+        %td= sell.total.to_s
+        %td= link_to "Ver", sell
 

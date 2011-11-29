@@ -13,5 +13,11 @@ class Sell < ActiveRecord::Base
   def product_tokens=(id)
     self.product_ids = id.split(",")
   end
-  
+
+  def total
+    t = 0.0
+    products.each{ |p| t += p.price }
+    t
+  end
+
 end

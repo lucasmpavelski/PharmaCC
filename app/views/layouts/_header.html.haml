@@ -5,50 +5,69 @@
       PharmaCC
     Sistema de gerenciamento de farmácias
   .header-menu
-    %ul.menu
-      %li.page_item
-        = link_to root_path do
-          %span
+    - if user_signed_in?
+      %ul.menu
+        %li.page_item
+          = link_to root_path do
             %span
-              Início
-      %li.page_item
-        %a{ :href => "#" }
-          %span
+              %span
+                Início
+        %li.page_item
+          %a{ :href => "#" }
             %span
-              Gerenciar
-        %ul
-          %li
-            - if can? :read, User
-              = link_to 'Usuários', users_path
-          %li
-            - if can? :read, Product
-              = link_to 'Produtos', products_path
-          %li
-            - if can? :read, Provider
-              = link_to 'Fornecedores', providers_path
-      %li.page_item
-        %a{ :href => "#" }
-          %span
+              %span
+                Gerenciar
+          %ul
+            %li
+              - if can? :read, User
+                = link_to 'Usuários', users_path
+            %li
+              - if can? :read, Product
+                = link_to 'Produtos', products_path
+            %li
+              - if can? :read, Provider
+                = link_to 'Fornecedores', providers_path
+        %li.page_item
+          %a{ :href => "#" }
             %span
-              Listar
-        %ul
-          %li
-            = link_to report_product_path do 
-              Relatórios Produtos
-          %li
-            = link_to report_sell_path do
-              Relatórios Vendas
-          %li
-            = link_to report_user_path do
-              Relatórios Usuários
-      %li.page_item
-        = link_to static_pages_help_path do 
-          %span
+              %span
+                Cadastrar
+          %ul
+            %li
+              = link_to new_sell_path do 
+                Venda
+            %li
+              = link_to new_product_path do 
+                Produto
+            %li
+              = link_to new_provider_path do
+                Fornecedor
+            %li
+              = link_to new_user_path do
+                Usuário
+        %li.page_item
+          %a{ :href => "#" }
             %span
-              Ajuda
-      %li.page_item
-        = link_to logout_path do
-          %span
+              %span
+                Relatórios
+          %ul
+            %li
+              = link_to report_product_path do 
+                Produtos
+            %li
+              = link_to report_sell_path do
+                Vendas
+            %li
+              = link_to report_user_path do
+                Usuários
+        %li.page_item
+          = link_to static_pages_help_path do 
             %span
-              Sair
+              %span
+                Ajuda
+        %li.page_item
+          = link_to logout_path do
+            %span
+              %span
+                Sair
 

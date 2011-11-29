@@ -29,6 +29,7 @@
               %td
                 - if can? :edit, sell
                   = link_to (image_tag "edit.png", :alt => "editar cadastro"), edit_sell_path(sell)
+                \&nbsp;
                 - if can? :destroy, sell
                   = link_to (image_tag "remove.png", :alt => "editar cadastro"), sell, :confirm => 'Deseja mesmo excluir esta Venda?', :method => :delete
 
